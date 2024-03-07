@@ -1,4 +1,4 @@
-# anokha24_serotonin_surfers
+# Team Name: anokha24_serotonin_surfers
 🌊 Welcome to the TEAM Serotonin Surfers! 🏄‍♂️
 We are a dynamic group of innovators who ride the waves of creativity to craft cutting-edge solutions. With a passion for technology and a drive for excellence, we've proudly clinched few prestigious hackathon prizes. Our team is dedicated to smart working, leveraging our diverse skills and expertise to deliver impactful results. 
 
@@ -16,6 +16,7 @@ METHODOLOGY:
 Collect diverse ISL image data---> Extract key features---> Developing ISL models---> Convert model to IR using OpenVINO---> Develop an application using OpenVINO's inference engine---> Evaluate and refine system
 
 TECHNOLOGY& INTEL TOOL-KIT:
+•Intel Python
 •Intel oneAPI Base Toolkit
 •Intel Distribution of OpenVINO toolkit
 •Python- Tensorflow
