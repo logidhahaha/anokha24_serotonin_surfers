@@ -8,6 +8,10 @@ The challenge is to develop a real-time sign language translation system that ac
 
 💡 **SOLUTION**: 
 
+
+![Screenshot 2024-03-28 160945](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/449e3e8e-7b54-4448-96fa-1d4f0b2e2394)
+
+
 Our proposed solution encompasses several key components aimed at developing an efficient and accurate system for Indian Sign Language (ISL) recognition. By acquiring diverse ISL image data and extracting relevant features such as hand location, orientation, and finger movements, we lay the groundwork for training a deep learning model capable of recognizing ISL gestures. This model is then optimized using OpenVINO, ensuring efficient execution on Intel hardware platforms. The development of an application using OpenVINO enables real-time video capture, feature processing, and translation of ISL signs into text or speech, thereby facilitating communication accessibility for individuals with hearing impairments. Continuous evaluation and refinement of the system are essential for improving accuracy and real-time performance, ensuring that it meets the evolving needs of its users.
 
 🎯 **INTEL ONE API OPENVINO TOOLKIT**:
@@ -33,17 +37,13 @@ The future scope for the sign language translation project is broad and promisin
 💻 **TECH STACKS:**
 
 ![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/b92400dd-4ec4-4a3a-8ccc-f53e8fa49e4f)
-
-- **PYTHON:** The primary programming language for implementing the sign language recognition system.
-- **FLASK:** Used to set up the web server and define routes for serving HTML templates and streaming video.
-- **OPENCV:** OpenCV is utilized for image and video processing tasks, including capturing video streams from cameras, image preprocessing, and text overlay on frames.
-- **TENSORFLOW:** Specifically its Keras API, is employed to load and use a pre-trained deep learning model for sign language recognition.
-- **NUMPY:** A fundamental package for scientific computing with Python, provides support for large, multi-dimensional arrays and mathematical functions, essential for data manipulation in the project.
-- **HTML/CSS/JAVASCRIPT:** HTML defines the structure and layout of the web interface, CSS styles the elements, and JavaScript handles user interactions and dynamic content updates, such as starting and stopping the camera feed.
-- **Jupyter Notebooks/IPython Widgets:** Jupyter Notebooks and IPython Widgets are used for interactive development and visualization, providing an environment for experimentation and code execution with interactive elements like buttons and images.
-- **Intel Distribution of OpenVINO Toolkit:** Although not explicitly mentioned, the project might leverage the Intel Distribution of OpenVINO Toolkit for optimizing and deploying deep learning models on Intel hardware platforms to achieve efficient inference performance.
-
-Overall, these tech stacks collectively enable the development, deployment, and interaction of the sign language recognition system, combining backend, frontend, interactive development, and potential deployment optimization tools.
+![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/d0dbe32b-7320-4423-9799-ac24c6812645)
+![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/52a29ac7-868a-43ad-895c-f2701db6ac77)
+![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/27913dc9-a2ec-4f29-909f-c4a7d2a84846)
+![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/07095284-7632-47f7-aabd-1a6570f44a17)
+![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/77ddba78-cfc5-418f-aaea-1f65d34163ef)
+![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/cb7a1403-754b-483b-adeb-bfd4a1fe28ad)
+![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/4dd66d32-0afe-46ad-90a0-5cabafb1a0e7)
 
 🌈 **CONCLUSION**:
 
