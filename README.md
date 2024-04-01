@@ -32,6 +32,8 @@ The future scope for the sign language translation project is broad and promisin
   
 💻 **TECH STACKS:**
 
+![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/b92400dd-4ec4-4a3a-8ccc-f53e8fa49e4f)
+
 - **PYTHON:** The primary programming language for implementing the sign language recognition system.
 - **FLASK:** Used to set up the web server and define routes for serving HTML templates and streaming video.
 - **OPENCV:** OpenCV is utilized for image and video processing tasks, including capturing video streams from cameras, image preprocessing, and text overlay on frames.
