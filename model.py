@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 from sklearn.model_selection import train_test_split
 from tensorflow.keras import layers, models
+from openvino.inference_engine import IECore
 
 # Function to load and preprocess the dataset
 def load_dataset(dataset_path, image_height, image_width):
@@ -60,3 +61,43 @@ model.fit(X_train, y_train, epochs=num_epochs, validation_data=(X_test, y_test))
 
 # Save the trained model
 model.save('/home/sam/Documents/intel-ss/trained_model.h5')  # Save the model
+
+# Convert the Keras model to OpenVINO IR format
+from tensorflow.python.framework import convert_to_constants
+model = tf.function(model).get_concrete_function([tf.TensorSpec(shape=[None, image_height, image_width, 3], dtype=tf.float32)])
+frozen_func = convert_to_constants.convert_variables_to_constants_v2(model)
+frozen_graph_def = frozen_func.graph.as_graph_def()
+
+# Save the frozen graph
+output_dir = '/home/sam/Documents/intel-ss/openvino_model'
+tf.io.write_graph(graph_or_graph_def=frozen_graph_def,
+                  logdir=output_dir,
+                  name="frozen_graph.pb",
+                  as_text=False)
+
+# Convert the frozen graph to OpenVINO IR format
+from mo_tf import mo_tf
+mo_tf(["--input_model", os.path.join(output_dir, "frozen_graph.pb"),
+       "--output_dir", output_dir,
+       "--input", "input_1",
+       "--output", "dense_1/Softmax",
+       "--data_type", "FP16"])
+
+# Load the OpenVINO IR model
+ie = IECore()
+net = ie.read_network(model=os.path.join(output_dir, "frozen_graph.xml"),
+                      weights=os.path.join(output_dir, "frozen_graph.bin"))
+
+# Load the network to the plugin
+exec_net = ie.load_network(network=net, device_name="CPU")
+
+# Perform inference using OpenVINO
+# Assuming you have test images stored in X_test
+results = []
+for img in X_test:
+    input_blob = next(iter(net.input_info))
+    output_blob = next(iter(net.outputs))
+    exec_net.start_async(request_id=0, inputs={input_blob: img})
+    if exec_net.requests[0].wait() == 0:
+        res = exec_net.requests[0].outputs[output_blob]
+        results.append(res)
