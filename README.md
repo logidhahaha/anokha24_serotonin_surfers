@@ -17,6 +17,7 @@ Our proposed solution encompasses several key components aimed at developing an 
 ![performance](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/121540092/a0dabf7a-d10e-4b78-9f1d-ba354f03d12c)
 
 
+The model performance is higher than this and the time consumption is lesser while using Intel toolkit.
 
 🚀 **Project Demo**:
 
