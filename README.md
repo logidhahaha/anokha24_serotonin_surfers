@@ -14,6 +14,14 @@ The challenge is to develop a real-time sign language translation system that ac
 
 Our proposed solution encompasses several key components aimed at developing an efficient and accurate system for Indian Sign Language (ISL) recognition. By acquiring diverse ISL image data and extracting relevant features such as hand location, orientation, and finger movements, we lay the groundwork for training a deep learning model capable of recognizing ISL gestures. This model is then optimized using <b>OpenVINO</b>, ensuring efficient execution on <b>Intel hardware</b> platforms. The development of an application using OpenVINO enables real-time video capture, feature processing, and translation of ISL signs into text or speech, thereby facilitating communication accessibility for individuals with hearing impairments. Continuous evaluation and refinement of the system are essential for improving accuracy and real-time performance, ensuring that it meets the evolving needs of its users.
 
+🎯 **Normal model Vs Intel optimized**:
+
+<h3>coming soon</h3>
+
+🚀 **Project Demo**:
+
+<h3>coming soon</h3>
+
 🎯 **INTEL ONE API OPENVINO TOOLKIT**:
 
 We have used the Intel oneAPI OpenVINO toolkit to enhance the efficiency and performance of our sign language translation system. Initially, we employed the toolkit's Model Optimizer tool to convert and optimize our trained deep learning model for inference, ensuring compatibility with Intel hardware platforms. By harnessing the power of Intel's hardware acceleration technologies, including Intel Deep Learning Boost and Intel Distribution of OpenVINO, we achieved real-time performance and minimized computational resources while executing the sign language translation system. 
