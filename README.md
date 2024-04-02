@@ -14,11 +14,12 @@ Our proposed solution encompasses several key components aimed at developing an 
 
 🎯 **Normal model Vs Intel optimized**:
 
-<h3>coming soon</h3>
+![performance](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/121540092/a0dabf7a-d10e-4b78-9f1d-ba354f03d12c)
 
 🚀 **Project Demo**:
 
-<h3>coming soon</h3>
+![Watch the video](https://youtu.be/_JYYyQgaWrs)
+
 
 🎯 **INTEL ONE API OPENVINO TOOLKIT**:
 
