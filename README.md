@@ -57,10 +57,37 @@ pip install opencv-python
 pip install numpy
 pip install tensorflow
 pip install notebook
+pip install openvino
 ```
-- [Install OpenVino Toolkit](https://docs.openvino.ai/2022.3/openvino_docs_install_guides_overview.html)
+[Install OpenVino Toolkit](https://docs.openvino.ai/2022.3/openvino_docs_install_guides_overview.html)
 
+💻 **Application:**
 
+```
+-anokha24_serotonin_surfers
+  - model.py
+  - main.py
+  - frozen_graph.xml
+  - frozen_graph.bin
+-anokha24_serotonin_surfers/ISL_Dataset
+-anokha24_serotonin_surfers/templates
+  -index.html
+```
+💻 **To run the application in IDC(Intel Developer Cloud):**
+
+```
+>ssh -<user> guest@<ip> ubuntu@<ip>
+
+>mkdir anokha24_serotonin_surfers
+>cd anokha24_serotonin_surfers
+
+>git clone https://github.com/logidhahaha/anokha24_serotonin_surfers.git
+
+>python main.py
+
+>snap install ngrok
+>ngrok http <port number>
+```
 
 
 
