@@ -20,8 +20,9 @@ Our proposed solution encompasses several key components aimed at developing an 
 
 🚀 **Project Demo**:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_JYYyQgaWrs?si=vNJ-dF0tnjWM3s_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=_JYYyQgaWrs"><img src="https://img.youtube.com/vi/_JYYyQgaWrs/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
 
 
 
