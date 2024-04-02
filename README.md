@@ -36,18 +36,12 @@ The future scope for the sign language translation project is broad and promisin
   
 💻 **TECH STACKS:**
 
-![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/b92400dd-4ec4-4a3a-8ccc-f53e8fa49e4f)
-![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/d0dbe32b-7320-4423-9799-ac24c6812645)
-![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/52a29ac7-868a-43ad-895c-f2701db6ac77)
-![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/27913dc9-a2ec-4f29-909f-c4a7d2a84846)
-![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/07095284-7632-47f7-aabd-1a6570f44a17)
-![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/77ddba78-cfc5-418f-aaea-1f65d34163ef)
-![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/cb7a1403-754b-483b-adeb-bfd4a1fe28ad)
-![image](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/4dd66d32-0afe-46ad-90a0-5cabafb1a0e7)
+![techstack](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/121540092/8795b847-a668-42f9-95dd-79b476ecd4f2)
+
 
 🌈 **CONCLUSION**:
 
-In conclusion, the sign language translation project represents a significant step forward in leveraging technology to enhance accessibility and inclusivity for individuals with hearing impairments. By combining advanced computer vision techniques, deep learning algorithms, and user-centric design principles, the project has developed a system capable of real-time translation of Indian Sign Language (ISL) gestures into spoken language or text. Through interdisciplinary collaboration and continuous engagement with end-users, the project has not only addressed the technical challenges of sign language interpretation but also prioritized the needs and preferences of the deaf and hard of hearing community. Moving forward, the project's impact extends beyond the realm of technology, contributing to broader societal goals of reducing inequalities and promoting inclusive education. By breaking down communication barriers and fostering understanding between sign language users and non-signers, the project exemplifies the transformative potential of accessible technology in creating a more inclusive and equitable society.
+The sign language translation project represents a significant step forward in leveraging technology to enhance accessibility and inclusivity for individuals with hearing impairments. By combining advanced computer vision techniques, deep learning algorithms, and user-centric design principles, the project has developed a system capable of real-time translation of Indian Sign Language (ISL) gestures into spoken language or text. By breaking down communication barriers and fostering understanding between sign language users and non-signers, the project exemplifies the transformative potential of accessible technology in creating a more inclusive and equitable society.
 
 🛠️ **LIBRARIES REQUIRED**:
 
