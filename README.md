@@ -16,9 +16,14 @@ Our proposed solution encompasses several key components aimed at developing an 
 
 ![performance](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/121540092/a0dabf7a-d10e-4b78-9f1d-ba354f03d12c)
 
+
+
 🚀 **Project Demo**:
 
-![Watch the video](https://youtu.be/_JYYyQgaWrs)
+<video></video>
+[![Video](https://img.youtube.com/vi/jXnoFqcAkQA/maxresdefault.jpg)](https://youtu.be/_JYYyQgaWrs)
+
+
 
 
 🎯 **INTEL ONE API OPENVINO TOOLKIT**:
