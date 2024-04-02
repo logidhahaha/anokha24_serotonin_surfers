@@ -33,11 +33,11 @@ The future scope for the sign language translation project is broad and promisin
 - **User-Centric Design:** Through continuous engagement with end-users and stakeholders, the project emphasizes the importance of user-centric design. Gathering feedback and insights from the deaf and hard of hearing community helps identify usability issues, refine translation accuracy, and enhance the overall user experience of the system.
 - **Ethical Considerations:** Developing assistive technologies like sign language translation systems requires careful consideration of ethical issues such as privacy, data security, and cultural sensitivity. Addressing these concerns is critical for building trust with users and ensuring the responsible deployment of the technology.
 - **Impact on Accessibility:** Ultimately, the project highlights the significant impact that accessible technology can have on improving the lives of individuals with disabilities. By enabling real-time translation of sign language into spoken language or text, the system promotes inclusivity, independence, and equal participation in society for people with hearing impairments.
-  
+
 💻 **TECH STACKS:**
 
-![techstack(1)](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/121540092/88c43581-db39-44a0-bd29-35a70fc966bd)
-
+  ![techstack(2)](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/121540092/b1a172ac-2178-46a7-843a-562a613900e5)
+  
 
 🌈 **CONCLUSION**:
 
