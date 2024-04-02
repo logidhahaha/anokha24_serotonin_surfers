@@ -1,57 +1,62 @@
+from flask import Flask, render_template, Response
 import cv2
 import numpy as np
-from tensorflow.keras.models import load_model
+from openvino.inference_engine import IECore
 
-# Load the trained model
-model = load_model('/home/sam/Documents/intel-ss/anokha24_serotonin_surfers/trained_model.h5')  # Load the trained model
+app = Flask(__name__)
+
+# Load the OpenVINO IR model
+def load_openvino_model(xml_path, bin_path):
+    ie = IECore()
+    net = ie.read_network(model=xml_path, weights=bin_path)
+    exec_net = ie.load_network(network=net, device_name="CPU")
+    return exec_net, net.input_info['input_1'].input_data.shape
+
+model, input_shape = load_openvino_model('/frozen_graph.xml',
+                                          '/frozen_graph.bin')
 
 # Function to preprocess frame
 def preprocess_frame(frame):
-    processed_frame = cv2.resize(frame, (128, 128))  # Resize the frame
+    processed_frame = cv2.resize(frame, (input_shape[3], input_shape[2]))  # Resize the frame
     processed_frame = processed_frame.astype('float32') / 255.0  # Normalize pixel values
     return processed_frame
 
 # Function to convert predictions to text
 def predictions_to_text(predictions):
-    # Get the index of the class with the highest probability
-    predicted_class_index = np.argmax(predictions[0])
-    # Assuming you have a list of class labels corresponding to the indices
     class_labels = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    # Define your class labels here
-    # Get the corresponding class label
+    predicted_class_index = np.argmax(predictions)
     predicted_text = class_labels[predicted_class_index]
     return predicted_text
 
+def gen_frames():
+    cap = cv2.VideoCapture(0)
+    while True:
+        success, frame = cap.read()  # read the camera frame
+        if not success:
+            break
+        else:
+            processed_frame = preprocess_frame(frame)
+            predictions = model.infer({model.input_info['input_1'].name: processed_frame})
+            text = predictions_to_text(predictions)
+            
+            # Overlay the predicted text on the frame
+            frame_with_text = cv2.putText(frame.copy(), text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            
+            # Encode the frame as JPEG
+            ret, buffer = cv2.imencode('.jpg', frame_with_text)
+            frame_encoded = buffer.tobytes()
+            
+            # Yield the frame bytes as part of the response
+            yield (b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n\r\n' + frame_encoded + b'\r\n')
 
-# Live camera feed
-cap = cv2.VideoCapture(0)
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        break
-    
-    # Preprocess frame
-    processed_frame = preprocess_frame(frame)
-    
-    # Reshape frame for model input
-    processed_frame = np.expand_dims(processed_frame, axis=0)
-    
-    # Make predictions
-    predictions = model.predict(processed_frame)
-    
-    # Convert predictions to text
-    text = predictions_to_text(predictions)
-    
-    # Display the recognized text on the screen
-    cv2.putText(frame, text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-    
-    # Display the frame
-    cv2.imshow('Sign Language Recognition', frame)
-    
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-# Release video capture and close windows
-cap.release()
-cv2.destroyAllWindows()
+if __name__ == "__main__":
+    app.run(debug=True)
