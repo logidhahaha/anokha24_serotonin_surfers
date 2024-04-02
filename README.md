@@ -43,6 +43,13 @@ The future scope for the sign language translation project is broad and promisin
 
 The sign language translation project represents a significant step forward in leveraging technology to enhance accessibility and inclusivity for individuals with hearing impairments. By combining advanced computer vision techniques, deep learning algorithms, and user-centric design principles, the project has developed a system capable of real-time translation of Indian Sign Language (ISL) gestures into spoken language or text. By breaking down communication barriers and fostering understanding between sign language users and non-signers, the project exemplifies the transformative potential of accessible technology in creating a more inclusive and equitable society.
 
+
+🔗 CLONE REPOSITORY:
+
+```
+git clone https://github.com/logidhahaha/anokha24_serotonin_surfers.git
+```
+
 🛠️ **LIBRARIES REQUIRED**:
 ```
 pip install Flask
@@ -53,9 +60,7 @@ pip install notebook
 ```
 - [Install OpenVino Toolkit](https://docs.openvino.ai/2022.3/openvino_docs_install_guides_overview.html)
 
-🔗 CLONE REPOSITORY:
 
-[GitHub](logidhahaha/anokha24_serotonin_surfers)
 
 
 
