@@ -12,15 +12,15 @@ The challenge is to develop a real-time sign language translation system that ac
 ![Screenshot 2024-03-28 160945](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/153316362/449e3e8e-7b54-4448-96fa-1d4f0b2e2394)
 
 
-Our proposed solution encompasses several key components aimed at developing an efficient and accurate system for Indian Sign Language (ISL) recognition. By acquiring diverse ISL image data and extracting relevant features such as hand location, orientation, and finger movements, we lay the groundwork for training a deep learning model capable of recognizing ISL gestures. This model is then optimized using <b>OpenVINO<b>, ensuring efficient execution on <b>Intel hardware<b> platforms. The development of an application using OpenVINO enables real-time video capture, feature processing, and translation of ISL signs into text or speech, thereby facilitating communication accessibility for individuals with hearing impairments. Continuous evaluation and refinement of the system are essential for improving accuracy and real-time performance, ensuring that it meets the evolving needs of its users.
+Our proposed solution encompasses several key components aimed at developing an efficient and accurate system for Indian Sign Language (ISL) recognition. By acquiring diverse ISL image data and extracting relevant features such as hand location, orientation, and finger movements, we lay the groundwork for training a deep learning model capable of recognizing ISL gestures. This model is then optimized using <b>OpenVINO</b>, ensuring efficient execution on <b>Intel hardware</b> platforms. The development of an application using OpenVINO enables real-time video capture, feature processing, and translation of ISL signs into text or speech, thereby facilitating communication accessibility for individuals with hearing impairments. Continuous evaluation and refinement of the system are essential for improving accuracy and real-time performance, ensuring that it meets the evolving needs of its users.
 
 🎯 **INTEL ONE API OPENVINO TOOLKIT**:
 
-We optimized the Intel oneAPI OpenVINO toolkit to enhance the efficiency and performance of our sign language translation system. Initially, we employed the toolkit's Model Optimizer tool to convert and optimize our trained deep learning model for inference, ensuring compatibility with Intel hardware platforms. We then leveraged OpenVINO's hardware acceleration capabilities to deploy the optimized model on various Intel devices, such as CPUs, GPUs, FPGAs, and VPUs, depending on the specific requirements of our application. By harnessing the power of Intel's hardware acceleration technologies, including Intel Deep Learning Boost and Intel Distribution of OpenVINO, we achieved real-time performance and minimized computational resources while executing the sign language translation system. Additionally, the Inference Engine API provided by OpenVINO facilitated seamless integration of the optimized model into our application, enabling efficient inference and real-time translation of Indian Sign Language gestures into spoken language or text. Overall, by optimizing the OpenVINO toolkit, we ensured that our sign language translation system delivered efficient and performant execution on Intel hardware platforms, thereby enhancing accessibility for individuals with hearing impairments.
+We have used the Intel oneAPI OpenVINO toolkit to enhance the efficiency and performance of our sign language translation system. Initially, we employed the toolkit's Model Optimizer tool to convert and optimize our trained deep learning model for inference, ensuring compatibility with Intel hardware platforms. By harnessing the power of Intel's hardware acceleration technologies, including Intel Deep Learning Boost and Intel Distribution of OpenVINO, we achieved real-time performance and minimized computational resources while executing the sign language translation system. 
 
 ⚙️ **USECASE OF INTEL DEVELOPER CLOUD**:
 
-In our project, we optimized the sign language translation system by leveraging the Intel Developer Cloud's advanced computing infrastructure and optimization tools. We first utilized the cloud's diverse range of virtual machines with varying CPU and GPU configurations to test our code across different environments, ensuring compatibility and performance consistency. Through iterative testing and validation, we fine-tuned our code to maximize efficiency and resource utilization, particularly by deploying it on virtual instances equipped with Intel's hardware acceleration technologies. This allowed us to evaluate the impact of optimizations such as Intel Deep Learning Boost and Intel Xe Graphics on the system's execution speed and scalability. Additionally, the scalability of the cloud infrastructure enabled us to dynamically provision additional resources to accommodate larger test workloads and perform parallel testing across multiple configurations simultaneously. By harnessing the power of the Intel Developer Cloud, we were able to optimize our sign language translation system for optimal performance on Intel hardware platforms, ensuring its readiness for deployment in real-world scenarios.
+In our project, we optimized the sign language translation system by leveraging the Intel Developer Cloud's advanced computing infrastructure and optimization tools. We utilized the cloud's diverse range of virtual machines with varying CPU and GPU configurations to test our code across different environments, ensuring compatibility and performance consistency. Through iterative testing and validation, we fine-tuned our code to maximize efficiency and resource utilization, particularly by deploying it on virtual instances equipped with Intel's hardware acceleration technologies. By harnessing the power of the Intel Developer Cloud, we were able to optimize our sign language translation system for optimal performance on Intel hardware platforms, ensuring its readiness for deployment in real-world scenarios.
 
 🚀 **FUTURE SCOPE**: 
 
@@ -44,12 +44,13 @@ The future scope for the sign language translation project is broad and promisin
 The sign language translation project represents a significant step forward in leveraging technology to enhance accessibility and inclusivity for individuals with hearing impairments. By combining advanced computer vision techniques, deep learning algorithms, and user-centric design principles, the project has developed a system capable of real-time translation of Indian Sign Language (ISL) gestures into spoken language or text. By breaking down communication barriers and fostering understanding between sign language users and non-signers, the project exemplifies the transformative potential of accessible technology in creating a more inclusive and equitable society.
 
 🛠️ **LIBRARIES REQUIRED**:
-
-- `pip install Flask`
-- `pip install opencv-python`
-- `pip install numpy`
-- `pip install tensorflow`
-- `pip install notebook`
+```
+pip install Flask
+pip install opencv-python
+pip install numpy
+pip install tensorflow
+pip install notebook
+```
 - [Install OpenVino Toolkit](https://docs.openvino.ai/2022.3/openvino_docs_install_guides_overview.html)
 
 🔗 CLONE REPOSITORY:
