@@ -36,7 +36,7 @@ The future scope for the sign language translation project is broad and promisin
   
 💻 **TECH STACKS:**
 
-![techstack](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/121540092/8795b847-a668-42f9-95dd-79b476ecd4f2)
+![techstack(1)](https://github.com/logidhahaha/anokha24_serotonin_surfers/assets/121540092/88c43581-db39-44a0-bd29-35a70fc966bd)
 
 
 🌈 **CONCLUSION**:
