@@ -1,0 +1,371 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Language Recognition</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0;
+                color: #333;
+            }
+
+            .navbar {
+                background-color: #333;
+                color: #fff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .menu {
+                display: flex;
+                align-items: center;
+            }
+
+            .menu-item {
+                margin-right: 20px;
+                cursor: pointer;
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .menu-item:hover {
+                text-decoration: underline;
+            }
+
+            #tryNowButton {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: #fff;
+                color: #333;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            #tryNowButton:hover {
+                background-color: #ccc;
+                color: #fff;
+            }
+            #canvasOverlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            .hero-section {
+                text-align: center;
+                padding: 100px 20px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+                margin-bottom: 40px;
+            }
+
+            .card-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin: 0 auto;
+                max-width: 1200px;
+                padding: 20px;
+            }
+
+            .card {
+                flex: 0 0 calc(33.3333% - 20px);
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin: 0 10px 20px;
+                text-align: center;
+            }
+
+            .card-title {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .card-content {
+                font-size: 16px;
+            }
+
+            .emoji {
+                font-size: 24px;
+                margin-right: 5px;
+            }
+
+            .camera-buttons {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .camera-button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: #4CAF50;
+                color: white;
+                transition: background-color 0.3s, color 0.3s;
+                margin: 0 10px;
+            }
+
+            .camera-button:hover {
+                background-color: #45a049;
+            }
+            .testimonials{
+                padding: 30px 10%;
+                background-color: #f0f0f0; 
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+            }
+
+            .testimonials:hover{
+                border-color: #333;
+                border-style: solid;
+                border-radius: 20px;
+            }
+    
+            .testi-text{
+                background-color: #f0f0f0;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                width: 100%;
+                padding: 0px 0px;
+                height: 200px;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .text-heading{
+                color: black;
+                font-size: 36px;
+                padding-top: 0px;
+                padding-bottom: 10px;
+            }
+    
+            .text-content{
+                color: black;
+                padding: 0% 20%;
+                font-size: large;
+                text-align: center;
+            }
+    
+            .testi-content{
+                background-color: #333;
+                width: 100%;
+                box-sizing: border-box;
+                /* height: 500px; */
+                border-radius: 30px;
+                padding: 7% 5%;
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .content-con
+            {
+                display: flex;
+                background-color: white;
+                height: 210px;
+                border-radius: 20px;
+                flex-direction: column;
+                width: 30%;
+                padding: 50px 5%;
+                box-sizing: border-box;
+                justify-content: space-between;
+            }
+    
+            .profile{
+                height: 50px;
+                display: flex;
+                box-sizing: border-box;
+                /* background-color: red; */
+                width: 100%;
+                align-items: center;
+            }
+    
+            .profile-image{
+                height: 100%;
+                padding-right: 10px;
+            }
+    
+            .review{
+                color: black;
+            }
+            .text-content{
+                color: black;
+                padding: 0% 20%;
+            }
+    
+   
+
+            /* footer */
+            .footer
+            {
+                width: 100%;
+                background-color: #333;
+                padding: 0% 8%;
+                display: flex;
+                height: 80px;
+                box-sizing: border-box;
+                justify-content: space-between;
+                color: white;
+            }
+
+            
+
+            .footer-description{
+                width: 30%;
+                display: flex;
+                align-items: center;
+            }
+
+            .footer-team{
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: right;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">🤟 SignSpeak</div>
+            <div class="menu">
+                <a href="#" class="menu-item">About Us</a>
+                <a href="#" class="menu-item">Testimonials</a>
+                <button id="tryNowButton">Try Now! 🚀</button>
+            </div>
+        </div>
+
+        <section class="hero-section">
+            <div class="hero-title">Sign Language Recognition</div>
+            <div class="hero-description">Welcome to the forefront of communication accessibility! Our innovative web tool bridges the gap between the deaf and hearing communities by converting sign language into text in real-time. Utilizing advanced technology, we offer a seamless and intuitive platform for individuals who use sign language to express themselves effortlessly in the digital world. Experience the freedom of barrier-free communication today! 🌐</div>
+            <!-- <div class="camera-buttons">
+                <button id="startButton" class="camera-button" onclick="startCamera()">Start Camera</button>
+                <button id="stopButton" class="camera-button" onclick="stopCamera()">Stop Camera</button>
+            </div> -->
+
+            <!-- <div class="camera-buttons">
+                <button class="camera-button" onclick="toggleCamera()">Toggle Camera</button>
+            </div> -->
+            
+            <button id="startButton" class="camera-button" onclick="startCamera()">Start Camera</button>
+            <button id="stopButton"  class="camera-button" onclick="stopCamera()">Stop Camera</button>
+            <br><br>
+            <img id="videoElement" alt="Video Stream">
+        </section>
+        
+
+        <div class="card-container">
+            <div class="card">
+                <div class="card-title">ISL Identification</div>
+                <div class="card-content">Identify sign language gestures accurately with our cutting-edge technology. 🤖</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">ISL to Text Conversion</div>
+                <div class="card-content">Effortlessly convert sign language into text in real-time. 📝</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">ISL to Voice Translation</div>
+                <div class="card-content">Translate sign language gestures into spoken words instantly. 🗣️</div>
+            </div>
+        </div>
+
+        <section class="testimonials" id="testi">
+            <div class="testi-text">
+                <p class="text-heading">Testimonials</p>
+                <p class="text-content">Discover the transformative experiences of individuals who have embraced our sign language to text conversion tool. In our testimonial section, you'll find heartfelt stories from users across the globe who have found a new level of independence, connectivity, and empowerment!
+                  
+                </p>
+            </div>
+            <div class="testi-content">
+                <div class="content-con">
+                    <div class="profile">
+                        <img class="profile-image" src="https://oliver-andersen.se/wp-content/uploads/2018/03/cropped-Profile-Picture-Round-Color.png" alt="">
+                        <p>Richard</p>
+                    </div>
+                    <div class="review">Bridging gaps. Everyone feels included. Absolutely essential.</div>
+                </div>
+                <div class="content-con">
+                    <div class="profile">
+                        <img class="profile-image" src="https://oliver-andersen.se/wp-content/uploads/2018/03/cropped-Profile-Picture-Round-Color.png" alt="">
+                        <p>Santhosh</p>
+                    </div>
+                    <div class="review">Now anyone can understand my signs. Thank you!</div>
+                </div>
+                <div class="content-con">
+                    <div class="profile">
+                        <img class="profile-image" src="https://oliver-andersen.se/wp-content/uploads/2018/03/cropped-Profile-Picture-Round-Color.png" alt="">
+                        <p>Gopal</p>
+                    </div>
+                    <div class="review">It helps me to understand signers in our community</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-description">
+                <h3>SignSpeak</h3>      
+            </div>
+            <div class="footer-team">
+                <h3>Team Serotonin Surfers</h3>
+            </div>
+        </footer>
+
+        <script>
+            const videoElement = document.getElementById('videoElement');
+            let isCameraRunning = false;
+        
+            // Function to toggle the camera feed
+            function toggleCamera() {
+                if (isCameraRunning) {
+                    stopCamera();
+                } else {
+                    startCamera();
+                }
+                isCameraRunning = !isCameraRunning;
+            }
+        
+            // Function to start the camera feed
+            function startCamera() {
+                videoElement.src = "{{ url_for('video_feed') }}";
+            }
+        
+            // Function to stop the camera feed
+            function stopCamera() {
+                videoElement.src = "";
+            }
+        </script>
+        
+        
+    </body>
+    </html>
